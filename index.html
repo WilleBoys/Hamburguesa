@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamburguesa AR</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
 </head>
 <body>
-    <h2>Selecciona la imagen de Arriba si eres IOS y la de Abajo si eres ANDROID para ver la Hamburguesa DEX en Realidad Aumentada</h2>
+    <h2>Selecciona la imagen de Arriba si eres iOS y la de Abajo si eres Android para ver la Hamburguesa DEX en Realidad Aumentada</h2>
 
     <!-- Enlace para iPhone (USDZ) -->
     <a rel="ar" href="https://WilleBoys.github.io/Hamburguesa/dex.usdz">
@@ -15,13 +16,25 @@
 
     <br><br>
 
-    <!-- Enlace para Android (GLB con Scene Viewer) -->
-    <a href="https://arvr.google.com/scene-viewer/1.0?file=https://WilleBoys.github.io/Hamburguesa/dex.glb&mode=ar&link-to-intent=true" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg" width="200" alt="Ver en AR en Android">
-    </a>
+    <!-- Visualización mejorada para Android con Model Viewer -->
+    <model-viewer 
+        src="https://WilleBoys.github.io/Hamburguesa/dex.glb" 
+        ar 
+        ar-modes="scene-viewer webxr quick-look"
+        camera-controls
+        auto-rotate
+        exposure="1.5"
+        shadow-intensity="1"
+        max-camera-orbit="auto 80deg auto"
+        min-camera-orbit="auto 10deg auto"
+        disable-tap
+        poster="https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg"
+        style="width: 100%; height: 500px;">
+    </model-viewer>
 
 </body>
 </html>
+
 
 
 
